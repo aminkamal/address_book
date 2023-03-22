@@ -45,7 +45,7 @@ public:
     }
   }
 
-  const TrieNode* FindAny(std::string string_to_find) const noexcept
+  const TrieNode* FindAny(std::string &string_to_find) const noexcept
   {
     auto at = find(string_to_find);
 
@@ -55,7 +55,7 @@ public:
     return nullptr;
   }
 
-  const TrieNode* FindExact(std::string string_to_find) const noexcept
+  const TrieNode* FindExact(std::string &string_to_find) const noexcept
   {
     auto at = find(string_to_find);
 

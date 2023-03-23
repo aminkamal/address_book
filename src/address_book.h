@@ -27,7 +27,7 @@ public:
 
   void PrintMatches(std::string name_to_find);
 
-  bool InsertEntry(std::string first_name, std::string last_name, std::string phone_number);
+  bool InsertEntry(std::string first_name, std::string last_name, std::string phone_number = "");
 
   bool DeleteEntry(std::string first_name);
 

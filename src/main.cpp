@@ -13,6 +13,7 @@ int main(int argc, char **argv)
   address_book.InsertEntry("johanna", "cina", "07999945678");
   address_book.InsertEntry("amelia", "smith", "07199945678");
   address_book.InsertEntry("amzlia", "perry", "07299945678");
+  address_book.InsertEntry("no", "phone");
 
   address_book.PrintSortedFirstNames();
 

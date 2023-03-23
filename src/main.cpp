@@ -14,11 +14,19 @@ int main(int argc, char **argv)
   address_book.InsertEntry("amelia", "smith", "07199945678");
   address_book.InsertEntry("amzlia", "perry", "07299945678");
 
-  // address_book.PrintSortedFirstNames();
+  address_book.PrintSortedFirstNames();
 
-  // address_book.PrintSortedLastNames();
+  address_book.PrintSortedLastNames();
 
   address_book.PrintMatches("joh");
+
+  bool deleted = address_book.DeleteEntry("John");
+  if (deleted)
+  {
+    std::cout << std::endl << "Successfully deleted entry" << std::endl << std::endl;
+
+    address_book.PrintSortedFirstNames();
+  }
 
   return 0;
 }

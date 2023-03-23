@@ -107,3 +107,10 @@ bool AddressBook::InsertEntry(
 
   return true;
 }
+
+bool AddressBook::DeleteEntry(std::string first_name)
+{
+  ToLowerCase(first_name);
+
+  return root_first_names.Unset(first_name);
+}

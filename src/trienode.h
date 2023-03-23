@@ -26,13 +26,12 @@ private:
 
 public:
   mutable bool is_end_marker;
-  char contents;
   T entry_;
   TrieNode *children[MAX_CHARS] = {};
   std::string value;
 
-  TrieNode(char character)
-      : is_end_marker(false), contents(character), entry_({})
+  TrieNode()
+      : is_end_marker(false), entry_({})
   {
   }
 
@@ -45,7 +44,7 @@ public:
     }
   }
 
-  const TrieNode* FindAny(std::string &string_to_find) const noexcept
+  const TrieNode* FindStartsWith(std::string &string_to_find) const noexcept
   {
     auto at = find(string_to_find);
 
@@ -86,7 +85,7 @@ public:
     {
       if (at->children[character - 'a'] == nullptr)
       {
-        at->children[character - 'a'] = new TrieNode(character);
+        at->children[character - 'a'] = new TrieNode();
       }
       at = at->children[character - 'a'];
     }

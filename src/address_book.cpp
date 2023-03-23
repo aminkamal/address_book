@@ -2,7 +2,7 @@
 #include <algorithm>
 
 AddressBook::AddressBook()
-  : root_first_names('\0'), root_last_names('\0')
+  : root_first_names(), root_last_names()
 {
 }
 
@@ -65,8 +65,8 @@ void AddressBook::PrintMatches(std::string name_to_find)
   std::cout << "Matched results:" << std::endl;
   std::cout << "First name\tLast name\tPhone" << std::endl;
 
-  auto first_name_pos = root_first_names.FindAny(name_to_find);
-  auto last_name_pos = root_last_names.FindAny(name_to_find);
+  auto first_name_pos = root_first_names.FindStartsWith(name_to_find);
+  auto last_name_pos = root_last_names.FindStartsWith(name_to_find);
 
   if (first_name_pos != nullptr)
   {
